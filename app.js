@@ -21,8 +21,9 @@ app.use(helmet());
 app.use(morgan("dev"));
 
 app.use(localMiddleware);
-app.use((req, res, next) => {
-    res.setHeader("Content-Security-Policy", "script-src'self' https://archive.org")
+
+app.use(function(req, res, next) {
+    res.setHeader("Content-Security-Policy", "script-src 'self' https://archive.org");
     return next();
 });
 
