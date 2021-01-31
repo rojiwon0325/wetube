@@ -14,3 +14,7 @@ const CommentSchema = new mongoose.Schema({
         ref: "Video"
     }
 });
+
+const model = mongoose.Schema("Comment", CommentSchema);
+
+export default model;
