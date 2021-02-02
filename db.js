@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+
 dotenv.config();
 
 mongoose.connect(
@@ -12,10 +13,10 @@ mongoose.connect(
 
 const db = mongoose.connection;
 
-db.once("open", ()=>{
+db.once("open", () => {
     console.log("✅Connected to DB");
 });
 
-db.on("error",(error)=>{
+db.on("error", (error) => {
     console.log(`❌Error on DB Connetion:${error}`);
 });

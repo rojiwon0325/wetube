@@ -8,12 +8,20 @@ const OUTPUT_DIR = path.join(__dirname, "static");
 
 const config = {
     entry: ENTRY_FILE,
+    devtool: "source-map",
     mode: MODE,
     plugins: [new MiniCssExtractPlugin({
-        filename: "style.css"
+        filename: "styles.css"
     })],
     module: {
         rules: [
+            {
+                test: /\.(js)&/,
+                use: [
+                    { loader: "babel-loader" }
+                ]
+            }
+            ,
             {
                 test: /\.(scss|sass)$/,
                 use: [
