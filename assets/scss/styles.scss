@@ -2,6 +2,11 @@
 @import "./config/reset.scss";
 @import "./main.scss";
 
-body{
-    background-color: $yred;
-}
+@import "./patials/header.scss";
+@import "./patials/footer.scss";
+@import "./patials/form.scss";
+@import "./patials/socialLogin.scss";
+@import "./patials/videoBlock.scss";
+
+@import "./pages/home.scss";
+@import "./pages/videoDetail.scss";
