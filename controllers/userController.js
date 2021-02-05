@@ -2,7 +2,6 @@ import passport from "passport";
 import routes from "../routes";
 import User from "../models/User";
 
-
 export const getJoin = (req, res) => {
     res.render("join", { pageTitle: "Join" });
 }
@@ -41,9 +40,7 @@ export const postGithubLogin = (req, res) => {
 };
 
 export const githubLoginCallback = async (_, __, profile, cb) => {
-    console.log(profile);
-    const { _json: { id, avatarurl, name } } = profile;
-    const { value: email } = profile.emails.filter((item) => item.primary)[0];
+    const { _json: { id, avatar_url, name, email } } = profile;
     try {
         const user = await User.findOne({ email });
         if (user) {
@@ -52,7 +49,7 @@ export const githubLoginCallback = async (_, __, profile, cb) => {
             return cb(null, user);
         } else {
             const newUser = await User.create({
-                email, name, githubId: id, avatarUrl: avatarurl
+                email, name, githubId: id, avatarUrl: avatar_url
             });
             return cb(null, newUser);
         }

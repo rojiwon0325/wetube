@@ -5,9 +5,9 @@
   "author": "Rojiwon",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/node": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
+    "@babel/core": "^7.12.13",
+    "@babel/node": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
     "autoprefixer": "^10.2.4",
     "babel-loader": "^8.2.2",
     "body-parser": "^1.19.0",
@@ -19,7 +19,7 @@
     "express-session": "^1.17.1",
     "helmet": "^4.4.1",
     "mini-css-extract-plugin": "^1.3.5",
-    "mongoose": "^5.11.14",
+    "mongoose": "^5.11.15",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
     "passport": "^0.4.1",
@@ -27,12 +27,12 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.1.0",
     "postcss": "^8.2.4",
-    "postcss-loader": "^4.2.0",
+    "postcss-loader": "^5.0.0",
     "pug": "^3.0.0",
-    "sass": "^1.32.5",
+    "sass": "^1.32.6",
     "sass-loader": "^10.1.1",
-    "webpack": "^5.19.0",
-    "webpack-cli": "^4.4.0"
+    "webpack": "^5.20.2",
+    "webpack-cli": "^4.5.0"
   },
   "scripts": {
     "dev:server": "nodemon --exec babel-node init.js --delay 2 --ignore 'scss' ",

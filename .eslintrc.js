@@ -12,6 +12,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    "camelcase": "off",
     "prettier/prettier": "off",
     "no-console": "off",
     "space-comment": "off",

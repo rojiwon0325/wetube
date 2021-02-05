@@ -16,5 +16,11 @@ passport.use(
     }, githubLoginCallback
     ));
 
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
+passport.deserializeUser(async (id, done) => {
+    await User.findById(id, (err, user) => {
+        done(err, user);
+    });
+});

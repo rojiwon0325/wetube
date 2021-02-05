@@ -8,7 +8,7 @@ mongoose.connect(
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
-        //is same with useFindAndModify:false
+        // is same with useFindAndModify:false
     }
 );
 

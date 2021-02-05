@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import passport from "passport-local-mongoose";
+import passportLocalMongoose from "passport-local-mongoose";
 
 const UserSchema = new mongoose.Schema({
     name: String,
@@ -9,7 +9,7 @@ const UserSchema = new mongoose.Schema({
     githubId: Number
 });
 
-UserSchema.plugin(passport, { usernameField: "email" });
+UserSchema.plugin(passportLocalMongoose, { usernameField: "email" });
 
 
 const model = mongoose.model("User", UserSchema);
