@@ -1,5 +1,8 @@
+include ./videoPlayer
+
 mixin videoBlock(video = {})
     .videoBlock
+        //+videoPlayer({src:video.fileUrl})
         video.videoBlock__thumbnail(src=video.fileUrl, controls=true)
         h4.videoBlock__title=video.title
         a(href=routes.videoDetail(video.id)) Detail

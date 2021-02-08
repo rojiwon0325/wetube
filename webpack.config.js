@@ -1,3 +1,4 @@
+const autoprefixer = require("autoprefixer");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 
@@ -28,7 +29,14 @@ const config = {
                     MiniCssExtractPlugin.loader,
                     "css-loader",
                     {
-                        loader: "postcss-loader"
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    autoprefixer,
+                                ]
+                            },
+                        },
                     },
                     "sass-loader"
                 ]
