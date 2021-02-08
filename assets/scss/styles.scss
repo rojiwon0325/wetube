@@ -1,5 +1,6 @@
 @import "./config/variables";
 @import "./config/reset.scss";
+@import "./config/utils.scss";
 @import "./main.scss";
 
 @import "./patials/header.scss";
@@ -7,6 +8,8 @@
 @import "./patials/form.scss";
 @import "./patials/socialLogin.scss";
 @import "./patials/videoBlock.scss";
+@import "./patials/videoPlayer.scss";
 
 @import "./pages/home.scss";
 @import "./pages/videoDetail.scss";
+@import "./pages/userProfile.scss";

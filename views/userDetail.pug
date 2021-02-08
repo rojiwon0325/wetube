@@ -1,4 +1,21 @@
 extends layouts/main
+include mixins/videoBlock
 
 block content
-    p userDetail
+    .user-profile
+        .user-profile__header
+            img.u-avatar(src=user.avatarUrl)
+            h4.profile__username=user.name
+        .user-profile__btns
+            a(href=`${routes.users}${routes.editProfile}`)
+                button ✏️ Edit Profile
+            a(href=`${routes.users}${routes.changePassword}`)
+                button 🔒 Change Password
+        .uploaded-viedos
+        .home-videos
+            each item in user.videos
+                +videoBlock(item)
+            each item in user.videos
+                +videoBlock(item)
+            each item in user.videos
+                +videoBlock(item)
