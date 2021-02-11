@@ -8,6 +8,11 @@ const totalTime = document.getElementById("totalTime");
 let bool = true;
 const volumeRnage = document.getElementById("jsVolume");
 
+const registerView = () => {
+    const id = window.location.href.split("/videos/")[1];
+    fetch(`/api/${id}/views`, { method: "POST" });
+}
+
 const formatDate = seconds => {
     const secondsNumber = parseInt(seconds, 10);
     let hours = Math.floor(secondsNumber / 3600);
@@ -91,6 +96,7 @@ function handleScreenClick() {
 
 }
 function handleEnded() {
+    registerView();
     videoPlayer.currentTime = 0;
     playBtn.innerHTML = '<i class="fas fa-play"></i>';
 }
