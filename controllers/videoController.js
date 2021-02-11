@@ -133,7 +133,7 @@ export const postAddComment = async (req, res) => {
             text: comment,
             creator: user.id
         });
-        video.comments.push(newComment._id);
+        video.comments.push(newComment.id);
         video.save();
     } catch (error) {
         res.status(400);
